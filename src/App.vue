@@ -1,23 +1,19 @@
 <template>
   <div class="app-container">
-    <header v-if="isAuthenticated">
+    <header>
       <nav>
-        <router-link to="/" class="logo">{{ $t('app_name') }}</router-link>
+        <router-link to="/" class="logo">Bimba Bolão</router-link>
         <div class="nav-links">
-          <router-link to="/matches">{{ $t('matches.upcoming') }}</router-link>
-          <router-link to="/predictions">{{ $t('predictions.your_predictions') }}</router-link>
-          <router-link to="/leaderboard">{{ $t('leaderboard.title') }}</router-link>
-          <router-link to="/profile">{{ $t('common.profile') }}</router-link>
-          <button @click="logout" class="logout-btn">{{ $t('common.logout') }}</button>
+          <router-link to="/matches">Matches</router-link>
+          <router-link to="/predictions">Predictions</router-link>
+          <router-link to="/leaderboard">Leaderboard</router-link>
+          <router-link to="/profile">Profile</router-link>
+          <router-link to="/login">Login</router-link>
         </div>
       </nav>
     </header>
     <main>
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <router-view />
     </main>
     <footer>
       <p>&copy; {{ currentYear }} Bimba Bolão</p>
@@ -26,24 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import { useAuthStore } from '@/store/authStore';
+import { computed } from 'vue';
 
-const router = useRouter();
-const authStore = useAuthStore();
-
-const isAuthenticated = computed(() => authStore.isAuthenticated);
 const currentYear = computed(() => new Date().getFullYear());
-
-onMounted(async () => {
-  await authStore.initialize();
-});
-
-const logout = async () => {
-  await authStore.logout();
-  router.push('/login');
-};
 </script>
 
 <style>
@@ -119,21 +100,6 @@ nav {
   color: var(--accent-primary);
 }
 
-.logout-btn {
-  background-color: transparent;
-  border: 1px solid var(--accent-primary);
-  color: var(--accent-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.logout-btn:hover {
-  background-color: var(--accent-primary);
-  color: var(--bg-primary);
-}
-
 main {
   flex: 1;
   padding: 2rem;
@@ -147,15 +113,5 @@ footer {
   padding: 1rem;
   text-align: center;
   color: var(--text-secondary);
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

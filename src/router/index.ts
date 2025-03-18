@@ -53,8 +53,9 @@ const routes: Array<RouteRecordRaw> = [
   }
 ];
 
+// Use import.meta.env.BASE_URL to ensure correct base path for GitHub Pages
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
 });
 

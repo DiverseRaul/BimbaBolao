@@ -27,6 +27,14 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
+      # Create a .nojekyll file to prevent GitHub Pages from using Jekyll
+      - name: Create .nojekyll file
+        run: touch dist/.nojekyll
+
+      # Copy the test index.html to the root of the dist folder
+      - name: Copy test index.html
+        run: cp public/index.html dist/test.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:

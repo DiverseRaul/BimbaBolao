@@ -1,45 +1,36 @@
 <template>
   <div class="home-container">
     <section class="hero">
-      <h1>{{ $t('common.welcome') }}</h1>
-      <p class="hero-subtitle">{{ $t('app_name') }}</p>
+      <h1>Welcome to Bimba Bolão</h1>
+      <p class="hero-subtitle">Soccer Prediction Platform</p>
       
-      <div class="auth-buttons" v-if="!isAuthenticated">
-        <router-link to="/login" class="btn btn-primary">{{ $t('common.login') }}</router-link>
-        <router-link to="/register" class="btn btn-outline">{{ $t('common.signup') }}</router-link>
-      </div>
-      
-      <div class="dashboard-buttons" v-else>
-        <router-link to="/matches" class="btn btn-primary">{{ $t('matches.upcoming') }}</router-link>
-        <router-link to="/predictions" class="btn btn-outline">{{ $t('predictions.your_predictions') }}</router-link>
+      <div class="auth-buttons">
+        <router-link to="/login" class="btn btn-primary">Login</router-link>
+        <router-link to="/register" class="btn btn-outline">Sign Up</router-link>
       </div>
     </section>
     
     <section class="features">
       <div class="feature-card">
-        <h3>{{ $t('matches.predict') }}</h3>
-        <p>{{ $t('predictions.make_prediction') }}</p>
+        <h3>Predict Matches</h3>
+        <p>Make predictions for upcoming soccer matches</p>
       </div>
       
       <div class="feature-card">
-        <h3>{{ $t('leaderboard.title') }}</h3>
-        <p>{{ $t('leaderboard.rank') }}</p>
+        <h3>Leaderboard</h3>
+        <p>Compete with friends and check your ranking</p>
       </div>
       
       <div class="feature-card">
-        <h3>{{ $t('groups.your_groups') }}</h3>
-        <p>{{ $t('groups.create_group') }}</p>
+        <h3>Join Groups</h3>
+        <p>Create or join groups with friends</p>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useAuthStore } from '@/store/authStore';
-
-const authStore = useAuthStore();
-const isAuthenticated = computed(() => authStore.isAuthenticated);
+// Simplified script for GitHub Pages deployment
 </script>
 
 <style scoped>
@@ -69,7 +60,7 @@ h1 {
   color: var(--text-secondary);
 }
 
-.auth-buttons, .dashboard-buttons {
+.auth-buttons {
   display: flex;
   gap: 1rem;
 }
