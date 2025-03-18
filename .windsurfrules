@@ -1,0 +1,78 @@
+Project Context
+This project is a web application for a betting pool (sweepstakes), allowing users to create groups with friends and place score predictions on soccer games.
+Code Style and Structure
+Use Vue.js with a modular approach.
+Prefer composition API over options API.
+Use TypeScript for type safety.
+Organize files as follows:
+src/
+├── components/     # Shared Vue components (PascalCase)
+├── composables/    # Reusable logic (Vue composables, camelCase functions)
+├── store/          # Pinia state management (camelCase store names)
+├── utils/          # Helper functions (camelCase functions, SCREAMING_SNAKE_CASE constants)
+├── locales/        # i18n translations (kebab-case files, snake_case keys)
+├── views/          # Page views (PascalCase for component files)
+├── assets/         # Static assets (icons, images, kebab-case filenames)
+├── router/         # Vue Router configuration (camelCase route names)
+└── services/       # API service calls (camelCase function names, PascalCase interfaces)
+Tech Stack
+Vue.js
+Supabase (Backend)
+Vue I18n (Internationalization)
+Pinia (State Management)
+GitHub (Source Control & CI/CD)
+Naming Conventions
+Use PascalCase for component names (e.g., MatchCard.vue).
+Use camelCase for functions and variables (e.g., fetchUserData(), userScore).
+Use SCREAMING_SNAKE_CASE for environment variables (e.g., API_KEY).
+Use kebab-case for directories and file names (except component files) (e.g., user-profiles, match-history).
+Use snake_case for database table and column names (e.g., user_profiles, match_scores).
+Use named exports for reusable functions and utilities.
+TypeScript Usage
+Use TypeScript for all Vue components and utilities.
+Define and use PascalCase interfaces for API responses and state (e.g., UserProfile, MatchData).
+Avoid any type; enforce strict typing.
+State Management
+Use Pinia for managing state.
+Define separate stores for different entities (e.g., useUserStore, useMatchesStore).
+Persist user preferences and session data as needed.
+Internationalization (i18n)
+Use Vue I18n for UI translations.
+Implement a structured translation system (e.g., locales/en.json).
+For API responses and server-generated content, consider an additional i18n solution.
+UI and Styling
+Follow Material Design 3 (Google M3) guidelines.
+Use Roboto as the primary font.
+Default theme should be dark mode.
+API Routes and Endpoints
+Use kebab-case or snake_case for API endpoints (e.g., /user-profile, /get_matches).
+Error Handling
+Implement global error handling.
+Display user-friendly error messages.
+Handle API errors properly.
+Git Usage
+Commit Message Prefixes:
+fix: for bug fixes.
+feat: for new features.
+docs: for documentation changes.
+refactor: for code refactoring.
+test: for adding tests.
+chore: for maintenance tasks.
+Rules:
+Use lowercase for commit messages.
+Keep commit summaries concise.
+Reference issue numbers when applicable.
+CI/CD and Deployment
+Use GitHub Actions for CI/CD workflows.
+Implement automated testing in the CI pipeline.
+Deploy updates seamlessly with minimal downtime.
+Documentation
+Maintain a clear README with setup instructions.
+Document API endpoints and data flow.
+Keep config files well-documented.
+Minimize inline comments; use only for complex logic.
+Development Workflow
+Follow semantic versioning for releases.
+Test across multiple browsers and devices.
+Implement proper code reviews before merging changes.
+Maintain a changelog for major updates.

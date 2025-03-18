@@ -1,0 +1,74 @@
+{
+  "app_name": "Bimba Bolão",
+  "common": {
+    "welcome": "Bem-vindo ao Bimba Bolão",
+    "login": "Entrar",
+    "signup": "Cadastrar",
+    "logout": "Sair",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "search": "Buscar",
+    "loading": "Carregando..."
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Senha",
+    "confirm_password": "Confirmar Senha",
+    "forgot_password": "Esqueceu a senha?",
+    "reset_password": "Redefinir Senha",
+    "login_success": "Login realizado com sucesso",
+    "signup_success": "Conta criada com sucesso",
+    "logout_success": "Logout realizado com sucesso"
+  },
+  "matches": {
+    "upcoming": "Próximas Partidas",
+    "past": "Partidas Anteriores",
+    "live": "Partidas ao Vivo",
+    "predict": "Palpitar",
+    "home_team": "Time da Casa",
+    "away_team": "Time Visitante",
+    "score": "Placar",
+    "date": "Data",
+    "time": "Hora",
+    "location": "Local"
+  },
+  "predictions": {
+    "your_predictions": "Seus Palpites",
+    "make_prediction": "Fazer Palpite",
+    "edit_prediction": "Editar Palpite",
+    "points_earned": "Pontos Ganhos",
+    "correct_score": "Placar Exato",
+    "correct_outcome": "Resultado Correto",
+    "wrong": "Errado"
+  },
+  "leaderboard": {
+    "title": "Classificação",
+    "rank": "Posição",
+    "user": "Usuário",
+    "points": "Pontos",
+    "predictions_made": "Palpites Feitos",
+    "accuracy": "Precisão"
+  },
+  "groups": {
+    "your_groups": "Seus Grupos",
+    "create_group": "Criar Grupo",
+    "join_group": "Entrar em Grupo",
+    "leave_group": "Sair do Grupo",
+    "group_code": "Código do Grupo",
+    "members": "Membros",
+    "admin": "Administrador"
+  },
+  "errors": {
+    "general": "Algo deu errado",
+    "auth": "Erro de autenticação",
+    "not_found": "Não encontrado",
+    "permission": "Permissão negada",
+    "validation": "Erro de validação",
+    "network": "Erro de rede"
+  }
+}
