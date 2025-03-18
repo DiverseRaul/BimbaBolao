@@ -31,9 +31,13 @@ jobs:
       - name: Create .nojekyll file
         run: touch dist/.nojekyll
 
-      # Copy the test index.html to the root of the dist folder
-      - name: Copy test index.html
-        run: cp public/index.html dist/test.html
+      # Create CNAME file for custom domain
+      - name: Create CNAME file
+        run: echo "bolao.bimba.studio" > dist/CNAME
+
+      # Copy the direct HTML file as a fallback
+      - name: Copy direct HTML file
+        run: cp index-direct.html dist/direct.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

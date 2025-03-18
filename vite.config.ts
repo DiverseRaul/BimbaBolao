@@ -10,5 +10,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/BimbaBolao/', // Add this line for GitHub Pages deployment
+  base: '/', // Changed for custom domain bolao.bimba.studio
+  build: {
+    // Ensure proper MIME types for JavaScript files
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      }
+    }
+  }
 })
