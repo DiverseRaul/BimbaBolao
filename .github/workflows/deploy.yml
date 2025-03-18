@@ -35,9 +35,23 @@ jobs:
       - name: Create CNAME file
         run: echo "bolao.bimba.studio" > dist/CNAME
 
-      # Copy the direct HTML file as a fallback
-      - name: Copy direct HTML file
-        run: cp index-direct.html dist/direct.html
+      # Fix MIME types with .htaccess
+      - name: Create .htaccess file for MIME types
+        run: |
+          echo "AddType text/javascript .js" > dist/.htaccess
+          echo "AddType application/javascript .mjs" >> dist/.htaccess
+          echo "AddType text/javascript .ts" >> dist/.htaccess
+
+      # Copy vue-index.html to index.html
+      - name: Copy Vue index file
+        run: |
+          cp vue-index.html dist/index.html
+          cp vue-index.html dist/404.html
+
+      # Create a simple test file
+      - name: Create test HTML file
+        run: |
+          echo '<!DOCTYPE html><html><head><title>Test Page</title></head><body><h1>Test Page</h1><p>This is a simple test page created directly in the GitHub Actions workflow.</p></body></html>' > dist/test.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

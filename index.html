@@ -2,14 +2,269 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Bimba Bolão</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-primary: #121212;
+        --bg-secondary: #1e1e1e;
+        --text-primary: #ffffff;
+        --text-secondary: #b3b3b3;
+        --accent-primary: #4caf50;
+        --accent-secondary: #2e7d32;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      header {
+        background-color: var(--bg-secondary);
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--accent-primary);
+        text-decoration: none;
+      }
+      
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      
+      .nav-links a {
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      .nav-links a:hover {
+        color: var(--accent-primary);
+      }
+      
+      main {
+        flex: 1;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      
+      .home-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+      }
+      
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent-primary);
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: var(--text-secondary);
+      }
+      
+      .auth-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      
+      .btn-primary {
+        background-color: var(--accent-primary);
+        color: white;
+      }
+      
+      .btn-primary:hover {
+        background-color: var(--accent-secondary);
+      }
+      
+      .btn-outline {
+        background-color: transparent;
+        border: 1px solid var(--accent-primary);
+        color: var(--accent-primary);
+      }
+      
+      .btn-outline:hover {
+        background-color: var(--accent-primary);
+        color: white;
+      }
+      
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+      
+      .feature-card {
+        background-color: var(--bg-secondary);
+        border-radius: 8px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .feature-card h3 {
+        color: var(--accent-primary);
+        margin-bottom: 1rem;
+      }
+      
+      .feature-card p {
+        color: var(--text-secondary);
+      }
+      
+      footer {
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        text-align: center;
+        color: var(--text-secondary);
+      }
+      
+      .status-message {
+        background-color: var(--accent-primary);
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        text-align: center;
+      }
+      
+      @media (max-width: 768px) {
+        .features {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <!-- Use the standard Vite entry point for production builds -->
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app">
+      <header>
+        <nav>
+          <a href="#" class="logo">Bimba Bolão</a>
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Matches</a>
+            <a href="#">Predictions</a>
+            <a href="#">Leaderboard</a>
+            <a href="#">Login</a>
+          </div>
+        </nav>
+      </header>
+      
+      <main>
+        <div class="home-container">
+          <section class="hero">
+            <div class="status-message">
+              This is a static version of the site. The full Vue.js application is being fixed.
+            </div>
+            <h1>Welcome to Bimba Bolão</h1>
+            <p class="hero-subtitle">Soccer Prediction Platform</p>
+            
+            <div class="auth-buttons">
+              <a href="#" class="btn btn-primary">Login</a>
+              <a href="#" class="btn btn-outline">Sign Up</a>
+            </div>
+          </section>
+          
+          <section class="features">
+            <div class="feature-card">
+              <h3>Predict Matches</h3>
+              <p>Make predictions for upcoming soccer matches</p>
+            </div>
+            
+            <div class="feature-card">
+              <h3>Leaderboard</h3>
+              <p>Compete with friends and check your ranking</p>
+            </div>
+            
+            <div class="feature-card">
+              <h3>Join Groups</h3>
+              <p>Create or join groups with friends</p>
+            </div>
+          </section>
+        </div>
+      </main>
+      
+      <footer>
+        <p>&copy; 2025 Bimba Bolão</p>
+      </footer>
+    </div>
+    
+    <script>
+      console.log('Static Bimba Bolão page loaded successfully!');
+      
+      // Add links to debug pages
+      document.addEventListener('DOMContentLoaded', function() {
+        const links = document.createElement('div');
+        links.style.padding = '10px';
+        links.style.margin = '10px 0';
+        links.style.backgroundColor = '#2e2e2e';
+        links.style.color = 'white';
+        links.style.borderRadius = '4px';
+        links.style.textAlign = 'center';
+        
+        links.innerHTML = `
+          <p>Debug Links:</p>
+          <a href="./debug.html" style="color: #4caf50; margin-right: 15px;">Debug Page</a>
+          <a href="./direct.html" style="color: #4caf50; margin-right: 15px;">Direct HTML</a>
+          <a href="./test.html" style="color: #4caf50;">Test Page</a>
+        `;
+        
+        document.querySelector('.hero').appendChild(links);
+      });
+    </script>
   </body>
 </html>
