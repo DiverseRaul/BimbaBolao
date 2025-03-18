@@ -10,4 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: '/BimbaBolao/', // Add this line for GitHub Pages deployment
 })
